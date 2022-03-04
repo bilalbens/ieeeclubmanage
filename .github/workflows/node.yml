@@ -1,30 +1,40 @@
-name: IEEE ENSAF Project CI
-
+name: NASA Project CI
 on:
   push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+    branches: [master]
+  pull_request: 
+    branches: [master]
+jobs: 
+  # build: 
+  # deploy:      //build and deploy will  run  in parallele
 
-jobs:
-  build:
-    env:
-      CI: true
-      DATABASE: mongodb://localhost/ieeeEnsafDB
-    strategy:
-      matrix:
-          node-version: ['16.x']
-          mongodb-version: ['4.4']
-    runs-on: Ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js version ${{matrix.node-version}}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
+# here the deploy depends on build, wait until build end then run deploy
+  # build: 
+  # deploy: 
+  #   needs: build 
+    
+  build: 
+    env: 
+      CI: true  #the create react app test script will know that we are runing in ci env then will disable watch mode
+      #PORT: 9800 # we can add port... 
+      DATABASE: mongodb://localhost/ieeeEnsaf
+    strategy: #to run our jobs in differnet envir
+      matrix: 
+        node-version: [14.x, 16.x] #we will create 2 build jobs run in // each run through all steps below
+        mongodb-version: ['4.4']
+    runs-on: Ubuntu-latest  #or windows-latest #the os and platform will building our prjt on 
+    steps:   #steps and actions that are going to be taken by ubuntu while building , steps = scripts
+      - uses: actions/checkout@v2   #premade actions from github or third parties
+      - name: Use Node.js version ${{ matrix.node-version }}
+        uses: actions/setup-node@v2  #setup node premade action
+        with: #specific version of node
+          # node-version: "16"
+          node-version: ${{ matrix.node-version }} #passing node verion as a variable
       - name: Use MongoDB from Github actions
-        with: 
+        with:
           mongodb-version: ${{ matrix.mongodb-version }}
-        uses: supercharge/mongodb-github-action@1.7.0
-      - run: npm install
-      - run: npm run build --prefix client_ReactJs 
+        uses: supercharge/mongodb-github-action@1.7.0   #from https://github.com/marketplace/actions/mongodb-in-github-actions
+      - run: npm install  #run our own command. to install our dependencies. here will run this scripts : "install": "npm run install-server_NodeJs && npm run install-client_ReactJs",
+      - run: npm run build --prefix client_ReactJs
+      - run: npm test  #run the command "test": "npm test --prefix server_NodeJs && npm test --prefix client_ReactJs"
+                       #but the test in client_ReactJs is in the watch mode so always we should ctrl+q to exit the bash
