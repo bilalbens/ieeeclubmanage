@@ -1,0 +1,29 @@
+name: IEEE ENSAF Project CI
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    env:
+      CI: true
+      DATABASE: mongodb://localhost/ieeeEnsafDB
+    strategy:
+      matrix:
+          node-version: [14.x, 16.x]
+          mongodb-version: ['4.4']
+    runs-on: Ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js version ${{matrix.node-version}}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Use MongoDB from Github actions
+        with: 
+          mongodb-version: ${{ matrix.mongodb-version }}
+        uses: supercharge/mongodb-github-action@1.7.0
+      - run: npm install
+      - run: npm run build --prefix client_ReactJs 

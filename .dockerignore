@@ -1,0 +1,8 @@
+#exclude any node_modules folder if it exists in any (*) foler at the root
+*/node_modules
+
+
+.git
+
+#exclude /public folder is the result of running the cmd npm build
+server_NodeJs/public
