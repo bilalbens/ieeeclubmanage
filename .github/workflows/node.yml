@@ -1,4 +1,5 @@
 name: IEEE ENSAF Project CI
+
 on:
   push:
     branches: [master]
