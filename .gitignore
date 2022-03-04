@@ -1,7 +1,7 @@
 #dependencies
 /node_modules
 /.png
-Dockerfile
+.Dockerfile
 
 #testing 
 /coverage
