@@ -13,7 +13,7 @@ jobs:
       DATABASE: mongodb://localhost/ieeeEnsafDB
     strategy:
       matrix:
-          node-version: [14.x, 16.x]
+          node-version: ['14.x']
           mongodb-version: ['4.4']
     runs-on: Ubuntu-latest
     steps:

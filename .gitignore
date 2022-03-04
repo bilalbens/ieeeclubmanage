@@ -5,7 +5,7 @@
 /.pnp
 .pnp.js
 ieee-ensaf-project.pem
-dockerfile
+.dockerfile
 # testing
 /coverage
 
