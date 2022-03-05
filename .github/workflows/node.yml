@@ -1,4 +1,4 @@
-name: NASA Project CI
+name: IEEE ENSAF Project CI
 on:
   push:
     branches: [main]
