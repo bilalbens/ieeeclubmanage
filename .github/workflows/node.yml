@@ -36,5 +36,5 @@ jobs:
         uses: supercharge/mongodb-github-action@1.7.0   #from https://github.com/marketplace/actions/mongodb-in-github-actions
       - run: npm install  #run our own command. to install our dependencies. here will run this scripts : "install": "npm run install-server_NodeJs && npm run install-client_ReactJs",
       - run: npm run build --prefix client_ReactJs
-    #  - run: npm test  #run the command "test": "npm test --prefix server_NodeJs && npm test --prefix client_ReactJs"
+     #- run: npm test  #run the command "test": "npm test --prefix server_NodeJs && npm test --prefix client_ReactJs"
                        #but the test in client_ReactJs is in the watch mode so always we should ctrl+q to exit the bash
