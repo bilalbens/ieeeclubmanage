@@ -30,7 +30,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "BUILD_PATH=../server_NodeJs/public react-scripts build",
+    "build": "CI=false && BUILD_PATH=../server_NodeJs/public react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
