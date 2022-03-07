@@ -81,6 +81,9 @@ exports.userPhoto = (req,res)=>{
         res.set('Content-Type',ContentType)
         return res.send(data)
     }
+    else{
+        return res.json({error:true})
+    }
     // else{
     //     return res.json({ok:false});
 
@@ -129,7 +132,7 @@ exports.deleteUser = (req, res) => {
             })
         }
 
-        res.status(204).json({})
+        res.status(204).json({delete: "deleted successfully from backend"})
     })
 }   
 

@@ -99,20 +99,19 @@ export const httpVerifyUser = (id)=>{
 }
 
 
-export const httpDelteUser = (id)=>{
-    
-
+export const httpDelteUser =   (id,token)=>{
     return fetch(`${API_URL}/user/${id}`, {
         method: "DELETE",
         headers: {
             "Accept": "application/json",
             "Content-Type":"application/json",
-            Authorization: `Bearer ${isAuthenticated().token}`
+            Authorization: `Bearer ${token}`
 
         },
 
     })
-    .then(res=>res.json())
+    // .then(res=>res.json())
+    .then(res=>{console.log(res)})
     .catch(err=>console.error(err))
 
 

@@ -28,6 +28,8 @@ const Tables = (props) => {
     const [skip, setSkip] = useState(0)
     const [size, setSize] = useState(0)
     const [userList, setUserList] = useState()
+    let token = isAuthenticated().token
+    
 
 
     useEffect(() => {
@@ -85,7 +87,8 @@ const verifyUser = (id)=>{
 
 
 const deleteUser = (id)=>{
-    httpDelteUser(id).then((res)=>{
+  console.log("deleted successfully...")
+    httpDelteUser(id,token).then((res)=>{
       AllUsers(limit,skip)
         .then((res)=>{
               setUserList(res);

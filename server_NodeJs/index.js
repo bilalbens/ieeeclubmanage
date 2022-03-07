@@ -38,14 +38,16 @@ app.use(morgan("combined"));
 
 
 
-//Routes Middleware
-app.use("/", authRoutes)
-app.use("/user", userRoutes)
+
  
 
 
 // after build 
 app.use(express.static(path.join(__dirname, ".","public")))
+
+//Routes Middleware
+app.use("/", authRoutes)
+app.use("/user", userRoutes)
 
 app.get('/*',(req,res)=>{
   res.sendFile(path.join(__dirname,".","public","index.html"))
