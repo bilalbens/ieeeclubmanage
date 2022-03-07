@@ -20,7 +20,7 @@ jobs:
       DATABASE: mongodb://localhost/ieeeEnsaf
     strategy: #to run our jobs in differnet envir
       matrix: 
-        node-version: [14.x, 16.x] #we will create 2 build jobs run in // each run through all steps below
+        node-version: [16.x] #we will create 2 build jobs run in // each run through all steps below
         mongodb-version: ['4.4']
     runs-on: Ubuntu-latest  #or windows-latest #the os and platform will building our prjt on 
     steps:   #steps and actions that are going to be taken by ubuntu while building , steps = scripts
