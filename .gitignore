@@ -1,8 +1,9 @@
 #dependencies
 /node_modules
 /.png
-.Dockerfile
-
+Dockerfile
+/.pem
+ieee-ensaf-project
 #testing 
 /coverage
 
