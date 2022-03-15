@@ -25,6 +25,7 @@ mongoose.connect(process.env.DATABASE, {useNewUrlParser: true, useUnifiedTopolog
 //import routes
 const authRoutes = require("./routes/auth")
 const userRoutes = require("./routes/users")
+const userPosts = require("./routes/posts.router")
 
 
 
@@ -35,7 +36,8 @@ app.use(expressValidator()) // to validate data like name and email while signup
 app.use(cookieParser())//
 app.use(cors())// to allow all cross origin request from any site 
 app.use(morgan("combined"));
-
+// app.use(express.json({limit: '50mb'}));
+// app.use(express.urlencoded({limit: '50mb'}));
 
 
 
@@ -48,6 +50,7 @@ app.use(express.static(path.join(__dirname, ".","public")))
 //Routes Middleware
 app.use("/", authRoutes)
 app.use("/user", userRoutes)
+app.use("/post", userPosts)
 
 app.get('/*',(req,res)=>{
   res.sendFile(path.join(__dirname,".","public","index.html"))

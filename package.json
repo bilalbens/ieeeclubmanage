@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "install-server": "npm install --prefix server_NodeJs",
     "install-client": "npm install --prefix client_ReactJs",
@@ -14,5 +13,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "toastr": "^2.1.4"
+  }
 }

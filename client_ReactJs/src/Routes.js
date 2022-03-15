@@ -12,6 +12,7 @@ import EditProfile from './user/EditProfile'
 import { Courses } from './courses/Courses'
 import UserList from './admin/UserList'
 import NewAdmin from './admin/NewAdmin'
+import Post from './post/Post'
 
 
 function Routes() {
@@ -26,6 +27,7 @@ function Routes() {
                     <AdminRoute path="/admin/dashboard" exact component={AdminDashboard} />
                     <AdminRoute path="/admin/users" exact component={UserList} />
                     <AdminRoute path="/admin/addadmin" exact component={NewAdmin} />
+                    <AdminRoute path="/admin/post" exact component={Post} />
                     <Route path="/signin" exact component={Signin} />
                     <Route path="/signup" exact component={Signup} />
                 </Switch>

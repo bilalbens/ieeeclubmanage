@@ -52,8 +52,8 @@ const AdminDashboard = (props) => {
         
       </li>
       <li>
-      <Link aria-current="page" className={isActive(props.history,"/admin/addadmin" )} to="/admin/addadmin">
-        <AddIcon/>        New Admin
+      <Link aria-current="page" className={isActive(props.history,"/admin/post" )} to="/admin/post">
+        <AddIcon/>        New Post
         </Link>
         
       </li>

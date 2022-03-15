@@ -18,7 +18,6 @@ import "toastr/build/toastr.css"
 import { Link } from 'react-router-dom';
 import "../user/sign.css"
 
-
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -71,12 +70,14 @@ export default function SignUp(props) {
             
             toastr.warning(res.error, "Please check your form !",{
                 "positionClass": "toast-bottom-left",
+                "progressBar": true,
             })
         }
 
         else{
             toastr.success("user is created successfully","New Account",{
                 "positionClass": "toast-bottom-left",
+                "progressBar": true,
             })
             console.log(res)
             props.history.push('/signin')
@@ -84,6 +85,7 @@ export default function SignUp(props) {
     })
     .catch(err=>toastr.error(err, "server error !",{
         "positionClass": "toast-bottom-left",
+        "progressBar": true,
     }))
   }
 

@@ -30,10 +30,11 @@ EXPOSE 8000
 
 #/////////commands in amzon cli
 #chmod 400 ieee-ensaf-project.pem
-#ssh -i "ieee-ensaf-project.pem" ec2-user@54.159.151.207
+#ssh -i "ieee-ensaf-project.pem" ec2-user@54.235.21.108
 #sudo yum update -y
 #sudo yum install docker
 #sudo service docker start
 #sudo usermod -a -G docker ec2-user   // to make ec2-user as a root
 #docker login 
+#docker stop CONTAINER_ID
 #docker run --restart=always -p 8000:8000 bilaladockerid/ieee-ensaf-project  

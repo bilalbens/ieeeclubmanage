@@ -64,12 +64,14 @@ export default function Signin(props) {
             
             toastr.warning(res.error, "Please check your form !",{
                 "positionClass": "toast-bottom-left",
+                "progressBar": true,
             })
         }
 
         else{
             toastr.info("sign in successfully","welcome",{
                 "positionClass": "toast-bottom-left",
+                "progressBar": true,
             })
             localStorage.setItem("JWT_Info", JSON.stringify(res))
             props.history.push('/')
@@ -77,6 +79,7 @@ export default function Signin(props) {
     })
     .catch(err=>toastr.error(err, "server error !",{
         "positionClass": "toast-bottom-left",
+        "progressBar": true,
     }))
   }
 

@@ -8,6 +8,8 @@ import { FaCheckCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { API_URL } from "../config";
 import { AllUsers, httpVerifyUser, httpDelteUser } from "../core/ApiCore";
+import Spin from "react-cssfx-loading/lib/Spin";
+
 
 
 
@@ -29,23 +31,30 @@ const Tables = (props) => {
     const [size, setSize] = useState(0)
     const [userList, setUserList] = useState()
     let token = isAuthenticated().token
+
+    //Loading state
+    const [loadingSpin, setLoadingSpin] = useState(false);
     
 
 
     useEffect(() => {
+      setLoadingSpin(true)
+
         AllUsers(limit,skip)
         .then((res)=>{
               setUserList(res);
               setSkip(0)
               setSize(res.length)
-      
+              setLoadingSpin(false)
+
       })
     },[])
 
 
 
     const nextButton = ()=>{
-
+      setLoadingSpin(true)
+      
       const toskip = skip + limit
 
       AllUsers(limit,toskip)
@@ -53,11 +62,14 @@ const Tables = (props) => {
              setUserList(res);
              setSize(res.length)
             setSkip(toskip)
+            setLoadingSpin(false)
+
         
         })
   }
 
   const PreviousButton = ()=>{
+    setLoadingSpin(true)
 
     const toskip = skip - limit
 
@@ -66,39 +78,44 @@ const Tables = (props) => {
            setUserList(res);
            setSize(res.length)
           setSkip(toskip)
-      
+          setLoadingSpin(false)
+
       })
 }
 
 
 const verifyUser = (id)=>{
-    console.log(id)
-  httpVerifyUser(id).then((res)=>{
-    console.log(res)
 
-    AllUsers(limit,skip)
-      .then((res)=>{
-            setUserList(res);
-            setSize(res.length)
-  })}
+    setLoadingSpin(true)
+
+    httpVerifyUser(id).then((res)=>{
+        AllUsers(limit,skip)
+          .then((res)=>{
+                setUserList(res);
+                setSize(res.length)
+                setLoadingSpin(false)
+
+      })
+    }
 )
 
 }
 
 
 const deleteUser = (id)=>{
-  console.log("deleted successfully...")
+    setLoadingSpin(true)
+
     httpDelteUser(id,token).then((res)=>{
       AllUsers(limit,skip)
         .then((res)=>{
               setUserList(res);
               setSize(res.length)
+              setLoadingSpin(false)
+
     })}
   )
 
 }
-
-
 
 
 
@@ -233,7 +250,9 @@ const deleteUser = (id)=>{
 
 
      <Card border="light" className="table-wrapper table-responsive shadow-sm">
-   {userList &&   <Card.Body className="pt-0">
+     {loadingSpin && <div style={{display:"flex", justifyContent:"center",  width:"100%"}} className="p-5">   <Spin className="m-5"></Spin>  </div> }
+
+   {!loadingSpin && userList &&   <Card.Body className="pt-0">
         <Table hover className="user-table align-items-center">
           <thead>
             <tr>
@@ -248,9 +267,10 @@ const deleteUser = (id)=>{
               {/* <th className="border-bottom">Action</th> */}
             </tr>
           </thead>
+
           
           <tbody>
-            {userList.map(user => <TableRow  key={user._id} user={user} />)} 
+            { userList.map(user => <TableRow  key={user._id} user={user} />)} 
           </tbody>
             
         </Table>
