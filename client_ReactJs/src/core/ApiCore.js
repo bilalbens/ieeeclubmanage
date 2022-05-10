@@ -81,7 +81,18 @@ export const searchUsers = (search)=>{
 
 
 export const httpVerifyUser = (id)=>{
-    
+    return fetch(`${API_URL}/user/verify/${id}`, {
+        method: "POST",
+        headers: {
+            "Accept": "application/json",
+            "Content-Type":"application/json",
+            Authorization: `Bearer ${isAuthenticated().token}`
+
+        },
+
+    })
+    .then(res=>res.json())
+    .catch(err=>console.error(err))
     
 
 
@@ -127,4 +138,5 @@ export const httpDelteUser =   (id,token)=>{
 // export const httpDeletePost = (id,token)=>{
 
 // }
+
 

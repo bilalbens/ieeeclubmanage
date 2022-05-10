@@ -134,7 +134,7 @@ const handleImage =(e)=>{
     <Container sx={{height: '100%', width: '100%',pt:3, m: 0 }}>
               <h3 className="text-secondary" >Create a new post</h3>
 
-              <Box sx={{ width: '100%', borderRadius: 8,bgcolor: '#FFFFFF' ,height: '93%',boxShadow: 3,   }} >
+              <Box sx={{ width: '100%', borderRadius: 8,bgcolor: '#FFFFFF' ,height: '96%',boxShadow: 3,   }} >
               <form onSubmit={submitPost} id="post_form">
 
               <div className="row pt-4 " style={{ width:'100%'}}>
@@ -174,9 +174,11 @@ const handleImage =(e)=>{
                                 />
                               </Grid>
 
-                              <Grid item xs={11}>
+                              <Grid item xs={10} >
                                 <h6 className="mx-5 text-secondary mt-2">Content</h6>
                                 <MarkdownEditor
+                                 xs={10}
+                                  fullWidth
                                   content ={content}
                                   setContent={setContent}
                                 />

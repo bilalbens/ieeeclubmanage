@@ -138,6 +138,18 @@ exports.deleteUser = (req, res) => {
 
 
 
+exports.addNewAdmin = (req, res) => {
+    console.log( "body: " ,req.body)
+    User.findOneAndUpdate({email: req.body.email}, {$set: {"role": 1}}, (err, user) =>{
+        if(err){
+            return res.status(400).json({err})
+        }
+
+        res.status(201).json({
+           
+            "message": "Admin successfully added",})
+    })
+}
 
 
 // exports.AllUsers = (req, res) => {

@@ -113,124 +113,124 @@ const handleChange = (e) =>{
         <div>
         <Container component="main" maxWidth="xl">
 
-             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
-            <Grid container spacing={2}>
-              <Grid item xs={12}>
-                <TextField
-                  autoComplete="given-name"
-                  name="firstname"
-                  required
-                  fullWidth
-                  id="firstname"
-                  label="First Name"
-                  autoFocus
-                  onChange={handleChange}
-                />
+            <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+              <Grid container spacing={2}>
+                <Grid item xs={12}>
+                  <TextField
+                    autoComplete="given-name"
+                    name="firstname"
+                    required
+                    fullWidth
+                    id="firstname"
+                    label="First Name"
+                    autoFocus
+                    onChange={handleChange}
+                  />
+                </Grid>
+                <Grid item xs={12} >
+                  <TextField
+                    required
+                    fullWidth
+                    id="lastname"
+                    label="Last Name"
+                    name="lastname"
+                    autoComplete="family-name"
+                    onChange={handleChange}
+
+                  />
+                </Grid>
+    
+
+                <Grid item xs={12}>
+                  <TextField
+                    required
+                    fullWidth
+                    type="number"
+                    id="phone"
+                    label="Phone"
+                    name="pho,e"
+                    autoComplete="family-name"
+                    onChange={handleChange}
+
+                  />
+                </Grid>
+
+                <Grid item xs={12}>
+                  <TextField
+                    required
+                    fullWidth
+                    id="branch"
+                    label="Branch"
+                    name="branch"
+                    autoComplete="family-name"
+                    onChange={handleChange}
+
+                  />
+                </Grid>
+
+                <Grid item xs={12}>
+                  <TextField
+                    required
+                    fullWidth
+                    id="committee"
+                    label="Committee"
+                    name="committee"
+                    autoComplete="family-name"
+                    onChange={handleChange}
+
+                  />
+                </Grid>
+
+                <Grid item xs={12}>
+                  <TextField
+                    required
+                    fullWidth
+                    id="ieeeId"
+                    label="IEEE Member Id"
+                    name="ieeeId"
+                    onChange={handleChange}
+
+                  />
+                </Grid>
+
+
+                <Grid   item xs={12}>
+                  <TextField
+                    sx={{ borderColor: '#d01257 !important' }} 
+                    required
+                    fullWidth
+                    id="email"
+                    label="Email Address"
+                    name="email"
+                    autoComplete="email"
+                    onChange={handleChange}
+
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    required
+                    fullWidth
+                    name="password"
+                    label="Password"
+                    type="password"
+                    id="password"
+                    autoComplete="new-password"
+                    onChange={handleChange}
+
+
+                  />
+                </Grid>
               </Grid>
-              <Grid item xs={12} >
-                <TextField
-                  required
-                  fullWidth
-                  id="lastname"
-                  label="Last Name"
-                  name="lastname"
-                  autoComplete="family-name"
-                  onChange={handleChange}
-
-                />
-              </Grid>
-  
-
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  type="number"
-                  id="phone"
-                  label="Phone"
-                  name="pho,e"
-                  autoComplete="family-name"
-                  onChange={handleChange}
-
-                />
-              </Grid>
-
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  id="branch"
-                  label="Branch"
-                  name="branch"
-                  autoComplete="family-name"
-                  onChange={handleChange}
-
-                />
-              </Grid>
-
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  id="committee"
-                  label="Committee"
-                  name="committee"
-                  autoComplete="family-name"
-                  onChange={handleChange}
-
-                />
-              </Grid>
-
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  id="ieeeId"
-                  label="IEEE Member Id"
-                  name="ieeeId"
-                  onChange={handleChange}
-
-                />
-              </Grid>
-
-
-              <Grid   item xs={12}>
-                <TextField
-                  sx={{ borderColor: '#d01257 !important' }} 
-                  required
-                  fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
-                  onChange={handleChange}
-
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  name="password"
-                  label="Password"
-                  type="password"
-                  id="password"
-                  autoComplete="new-password"
-                  onChange={handleChange}
-
-
-                />
-              </Grid>
-            </Grid>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2, backgroundColor: '#026EA4' }}
-            >
-              Save
-            </Button>
-          </Box>
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 3, mb: 2, backgroundColor: '#026EA4' }}
+              >
+                Save
+              </Button>
+            </Box>
           </Container>
         </div>
     )

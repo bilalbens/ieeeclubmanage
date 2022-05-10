@@ -94,8 +94,8 @@ const Profile = (props) => {
 
     const userInfo= ()=>{
         return(
-                <div className="container">
-                  <div className="main-body">
+                <div className="container" style={{width:"100%"}}>
+                  <div className="" style={{width:"70%"}}>
                         <nav aria-label="breadcrumb" className="main-breadcrumb">
                           <ol className="breadcrumb">
                             <li className="breadcrumb-item"><a >Home</a></li>
@@ -104,8 +104,8 @@ const Profile = (props) => {
                           </ol>
                         </nav>
 
-                        <div className="row gutters-sm">
-                          <div className="col-md-4 mb-3">
+                        <div className="row">
+                          <div className="col-4">
                             <div className="card">
                               <div className="card-body">
                                 <div className="d-flex flex-column align-items-center text-center">
@@ -147,7 +147,8 @@ const Profile = (props) => {
                               </div>
                             </div>
                           </div>
-                          <div className="col-md-8">
+
+                          <div className="col-8">
                             <div className="card mb-3">
                               <div className="card-body">
                                 <div className="row">
@@ -227,9 +228,7 @@ const Profile = (props) => {
                                 <div className="row">
                                   <div className="col-sm-12">
                                   <Link  className="d-flex justify-content-center" style={{width:"200px !important"}} to='/editprofile' variant="body2">
-                                              <button 
-                                                className="my-2 btn btn-outline-primary px-5"
-                                              >
+                                              <button className="my-2 btn btn-outline-primary px-5">
                                                 Edit
                                               </button>
                                   </Link>
@@ -255,7 +254,7 @@ const Profile = (props) => {
              <div className="row justify-content-center mt-5">
 
 
-                    <div className="col-md-6">
+                    <div className="row">
                             {userInfo()} 
                     </div>
 

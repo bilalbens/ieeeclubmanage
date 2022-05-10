@@ -1,4 +1,23 @@
-body {
+.sidebar{
+        height:92vh !important;
+        top:8vh;
+        width:280px !important;
+        visibility: visible;
+        background-color: #212529;
+        border-right: 8px solid #C4C9D1;
+        padding-left: 5px;
+}
+
+.offcanvas-title{
+  color: #fff;
+  padding-bottom: 30px;
+  padding-right: 100px;
+  border-bottom: 1px solid #585B5E;
+}
+
+
+
+/* body {
   min-height: 100vh;
   min-height: -webkit-fill-available;
 }
@@ -86,4 +105,4 @@ main {
 }
 
 .fw-semibold { font-weight: 600; }
-.lh-tight { line-height: 1.25; }
+.lh-tight { line-height: 1.25; } */

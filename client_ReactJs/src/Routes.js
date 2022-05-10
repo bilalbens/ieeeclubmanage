@@ -11,8 +11,10 @@ import Profile from './user/Profile'
 import EditProfile from './user/EditProfile'
 import { Courses } from './courses/Courses'
 import UserList from './admin/UserList'
-import NewAdmin from './admin/NewAdmin'
+import NewAdmin from './admin/newAdmin/NewAdmin'
 import Post from './post/Post'
+import AboutUs from '../src/aboutus/AboutUs'
+import Contactus from '../src/contactus/Contact'
 
 
 function Routes() {
@@ -30,6 +32,8 @@ function Routes() {
                     <AdminRoute path="/admin/post" exact component={Post} />
                     <Route path="/signin" exact component={Signin} />
                     <Route path="/signup" exact component={Signup} />
+                    <Route path="/about" exact component={AboutUs} />
+                    <Route path="/contact" exact component={Contactus} />
                 </Switch>
 
             </BrowserRouter>

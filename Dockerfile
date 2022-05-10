@@ -38,3 +38,10 @@ EXPOSE 8000
 #docker login 
 #docker stop CONTAINER_ID
 #docker run --restart=always -p 8000:8000 bilaladockerid/ieee-ensaf-project  
+
+
+
+#//////////////git commands
+#git add .
+#git commit -m "message"
+#git push -f origin main

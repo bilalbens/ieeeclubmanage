@@ -4,7 +4,38 @@ a{
 }
 
 
+.navbar{
+    background-color: #026EA4 !important;
+    height: 8vh;
+    top: 0 !important;
+    padding: 0 10px;
+}
+
+.navbar-collapse{
+    background-color: #026EA4 !important;
+
+}
+
+
+@media  (max-width: 600px) {
+    .navbar-collapse{
+        background-color: #026EA4 !important;
+        z-index: 11111 !important;
+        /* display: flex !important; */
+        justify-content: space-between !important; 
+
+    }
+    .navbar-nav{
+        padding: 10px;
+    }
+    
+  }
+
+
+/* 
+
 .top{
+    top: 0;
     max-width: 100%;
     margin: 0 auto;
     padding: 0 80px;
@@ -82,4 +113,4 @@ a{
     color: #fff;
     cursor: pointer;
 }
-
+ */
